@@ -2,5 +2,8 @@
   "scripts": {
     "start": "node index.js",
     "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.13"
   }
-} 
+}
