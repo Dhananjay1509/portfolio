@@ -1,221 +1,57 @@
-# Portfolio Website - Dhananjay Nerkar
+# Dhananjay Nerkar Portfolio
 
-A modern, interactive portfolio website showcasing my work as a Data Analyst and Machine Learning enthusiast. Built with React, TypeScript, and modern web technologies.
+A modern, fullstack portfolio website built with React (Vite) for the frontend and Node.js/Express for the backend. This monorepo is structured for easy deployment on Render.com.
 
-![Portfolio Preview](https://img.shields.io/badge/Status-Live-brightgreen)
-![React](https://img.shields.io/badge/React-18-blue)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3-blue)
+## Features
+- **Frontend:**
+  - Built with React and Vite
+  - Responsive, dark-themed UI
+  - Animated backgrounds and interactive sections
+  - Live stats (age, time, etc.)
+  - Project showcase, about, contact, and more
+- **Backend:**
+  - Node.js/Express API (for future dynamic features)
+  - Ready for integration with databases or external APIs
 
-## 🌟 Features
+## Project Structure
+```
+portfolio-main/
+  client/   # Frontend (React/Vite)
+  server/   # Backend (Node/Express)
+  README.md
+  .gitignore
+```
 
-### Interactive Elements
-- **Live Age Counter**: Real-time age calculation from birth date (September 15, 2002)
-- **Asia/Kolkata Time Display**: Live clock showing current IST time
-- **Interactive Particle Background**: Mouse-responsive canvas animation
-- **Typewriter Effect**: Animated role title display
-- **Dark/Light Theme**: Seamless theme switching with system preference detection
+## Deployment (Render.com)
 
-### Portfolio Sections
-- **Hero Section**: Dynamic introduction with live stats and social links
-- **About**: Skills categorization with animated progress counters
-- **Projects**: Filterable showcase with technology tags and GitHub links
-- **Experience**: Education and work timeline
-- **Contact**: Integrated contact form with form validation
+### Frontend (Static Site)
+1. Go to [Render.com](https://render.com/) and create a new **Static Site**.
+2. Connect your GitHub repo and set the root directory to `client/`.
+3. Build command: `npm install && npm run build`
+4. Publish directory: `dist`
 
-### Technical Features
-- **Responsive Design**: Mobile-first approach with adaptive layouts
-- **Performance Optimized**: Fast loading with Vite build system
-- **Error Boundaries**: Robust error handling using OOP concepts
-- **SEO Optimized**: Proper meta tags and semantic HTML structure
-- **Accessibility**: ARIA labels and keyboard navigation support
+### Backend (Web Service)
+1. On Render, create a new **Web Service**.
+2. Set the root directory to `server/`.
+3. Build command: `npm install && npm run build` (if using TypeScript)
+4. Start command: `npm start`
+5. Set any required environment variables in the Render dashboard.
 
-## 🚀 Tech Stack
+## Development
 
 ### Frontend
-- **React 18** - Modern React with hooks and functional components
-- **TypeScript** - Type-safe development
-- **Tailwind CSS** - Utility-first styling framework
-- **Shadcn/UI** - High-quality component library with Radix UI primitives
-- **Framer Motion** - Smooth animations and transitions
-- **Wouter** - Lightweight client-side routing
+```sh
+cd client
+npm install
+npm run dev
+```
 
 ### Backend
-- **Node.js** - Runtime environment
-- **Express.js** - Web application framework
-- **TypeScript** - End-to-end type safety
-- **Drizzle ORM** - Type-safe database operations
-- **Zod** - Schema validation
-
-### Development Tools
-- **Vite** - Lightning-fast build tool and dev server
-- **ESBuild** - Ultra-fast JavaScript bundler
-- **TanStack Query** - Powerful data synchronization
-- **React Hook Form** - Performant form handling
-
-### Database & Deployment
-- **PostgreSQL** - Production database (via Neon)
-- **In-memory Storage** - Development environment
-- **Replit** - Development and hosting platform
-
-## 📱 Live Demo
-
-Visit the live portfolio: [Your Portfolio URL]
-
-## 🎯 Key Highlights
-
-### Data Analytics Focus
-- Showcases projects in machine learning and data analysis
-- Interactive charts and visualizations
-- Technology stack aligned with industry standards
-- Professional presentation of technical skills
-
-### Modern Development Practices
-- Full-stack TypeScript implementation
-- Component-driven architecture
-- Responsive and accessible design
-- Performance optimization techniques
-- Error handling and user experience focus
-
-### Interactive User Experience
-- Real-time data updates
-- Smooth animations and transitions
-- Theme customization
-- Mobile-responsive interface
-- Fast loading and smooth navigation
-
-## 🛠️ Installation & Setup
-
-### Prerequisites
-- Node.js 18+ 
-- npm or yarn package manager
-
-### Local Development
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/portfolio-website.git
-   cd portfolio-website
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Start development server**
-   ```bash
-   npm run dev
-   ```
-
-4. **Open in browser**
-   ```
-   http://localhost:5000
-   ```
-
-### Production Build
-
-```bash
-# Build for production
-npm run build
-
-# Start production server
-npm run start
+```sh
+cd server
+npm install
+npm start
 ```
 
-## 📂 Project Structure
-
-```
-portfolio-website/
-├── client/                 # Frontend React application
-│   ├── src/
-│   │   ├── components/     # Reusable UI components
-│   │   ├── pages/         # Page components
-│   │   ├── hooks/         # Custom React hooks
-│   │   └── lib/           # Utility functions and configs
-├── server/                # Backend Express application
-│   ├── routes.ts          # API route definitions
-│   ├── storage.ts         # Data storage layer
-│   └── index.ts           # Server entry point
-├── shared/                # Shared types and schemas
-│   └── schema.ts          # Database schemas and types
-└── README.md
-```
-
-## 🎨 Design Philosophy
-
-### Visual Design
-- **Clean & Modern**: Minimalist design with focus on content
-- **Professional**: Suitable for technical recruitment and networking
-- **Interactive**: Engaging animations without being distracting
-- **Accessible**: High contrast ratios and keyboard navigation
-
-### Technical Architecture
-- **Type Safety**: End-to-end TypeScript for reliability
-- **Performance**: Optimized loading and rendering
-- **Maintainability**: Clean code structure and documentation
-- **Scalability**: Modular components and efficient state management
-
-## 🔧 Configuration
-
-### Environment Variables
-```env
-DATABASE_URL=your_database_url
-PGPORT=5432
-PGUSER=your_username
-PGPASSWORD=your_password
-PGDATABASE=your_database
-PGHOST=your_host
-```
-
-### Theme Customization
-Modify colors in `client/src/index.css`:
-```css
-:root {
-  --primary: 210 100% 50%;
-  --background: 0 0% 100%;
-  /* Add custom colors */
-}
-```
-
-## 📊 Performance Metrics
-
-- **Lighthouse Score**: 95+ across all categories
-- **First Contentful Paint**: < 1.5s
-- **Largest Contentful Paint**: < 2.5s
-- **Cumulative Layout Shift**: < 0.1
-- **Time to Interactive**: < 3s
-
-## 🤝 Contributing
-
-While this is a personal portfolio, I welcome feedback and suggestions:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/improvement`)
-3. Commit your changes (`git commit -am 'Add improvement'`)
-4. Push to the branch (`git push origin feature/improvement`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 📞 Contact
-
-**Dhananjay Nerkar**
-- Email: nerkarr.dhananjay@gmail.com
-- LinkedIn: [linkedin.com/in/dhananjay-nerkar](https://www.linkedin.com/in/dhananjay-nerkar)
-- GitHub: [github.com/Dhananjay1509](https://github.com/Dhananjay1509)
-
-## 🙏 Acknowledgments
-
-- **Shadcn/UI** for the excellent component library
-- **Tailwind CSS** for the utility-first CSS framework
-- **Radix UI** for accessible component primitives
-- **Replit** for the development and hosting platform
-
----
-
-⭐ **Star this repository if it helped you build your own portfolio!**
-
-*Built with ❤️ by Dhananjay Nerkar*
+## License
+MIT
