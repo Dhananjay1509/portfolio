@@ -24,34 +24,13 @@
   --radius: 0.5rem;
 }
 
-.light {
-  --background: 0 0% 100%; /* #ffffff */
-  --foreground: 240 13% 14%; /* #1e1e26 */
-  --primary: 240 4% 21%; /* #34343b */
-  --primary-foreground: 0 0% 100%; /* #ffffff */
-  --secondary: 240 6% 91%; /* #e8e8e9 */
-  --secondary-foreground: 240 13% 14%; /* #1e1e26 */
-  --accent: 240 6% 40%; /* #616167 */
-  --accent-foreground: 0 0% 100%; /* #ffffff */
-  --muted: 240 7% 74%; /* #bbbbbd */
-  --muted-foreground: 240 6% 23%; /* #4a4a51 */
-  --card: 0 0% 96%; /* #f5f5f5 */
-  --card-foreground: 240 13% 14%; /* #1e1e26 */
-  --border: 240 8% 82%; /* #d2d2d3 */
-  --input: 240 8% 82%; /* #d2d2d3 */
-  --destructive: 0 62% 45%; /* #bb2d2d */
-  --destructive-foreground: 0 0% 100%; /* #ffffff */
-  --ring: 240 6% 40%; /* #616167 */
-  --radius: 0.5rem;
-}
-
 @layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply font-sans antialiased bg-background text-foreground text-lg;
   }
 
   html {
@@ -61,22 +40,33 @@
 
 @layer components {
   .gradient-text {
-    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary)),
+      hsl(var(--accent))
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .gradient-text, h1, h2, h3, h4, h5, h6 {
+  .gradient-text,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: #fff !important;
     background: none !important;
     -webkit-background-clip: unset !important;
     -webkit-text-fill-color: #fff !important;
     background-clip: unset !important;
     text-shadow: none !important;
-}
+  }
 
-  .card-hover, .card {
+  .card-hover,
+  .card {
     background: hsl(var(--card)) !important;
     color: hsl(var(--card-foreground)) !important;
     border: 1px solid hsl(var(--border)) !important;
@@ -85,11 +75,11 @@
 
   .card-hover:hover {
     transform: translateY(-4px);
-    box-shadow: 0 2px 8px 0 rgba(34,51,108,0.08);
+    box-shadow: 0 2px 8px 0 rgba(34, 51, 108, 0.08);
   }
 
   .dark .card-hover:hover {
-    box-shadow: 0 2px 8px 0 rgba(34,51,108,0.16);
+    box-shadow: 0 2px 8px 0 rgba(34, 51, 108, 0.16);
   }
 
   .tech-badge {
@@ -98,25 +88,25 @@
     color: #fff !important;
     transition: all 0.2s ease;
     box-shadow: none !important;
-}
+  }
 
   .tech-badge:hover {
     background: hsl(var(--secondary)) !important;
     transform: translateY(-1px);
-}
+  }
 
   .nav-link {
     position: relative;
     transition: all 0.3s ease;
     color: #fff !important;
-}
+  }
 
   .nav-link:hover {
     color: hsl(var(--accent)) !important;
-}
+  }
 
   .nav-link.active::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -4px;
     left: 0;
@@ -124,25 +114,30 @@
     height: 2px;
     background: hsl(var(--accent)) !important;
     border-radius: 1px;
-}
-  .btn-accent, .accent-bg {
+  }
+  .btn-accent,
+  .accent-bg {
     background: hsl(var(--primary)) !important;
     color: #fff !important;
     border-color: hsl(var(--primary)) !important;
   }
-  .btn-accent:hover, .accent-bg:hover {
+  .btn-accent:hover,
+  .accent-bg:hover {
     background: hsl(var(--accent)) !important;
     color: #fff !important;
   }
-  .age-widget, .time-widget {
+  .age-widget,
+  .time-widget {
     background: hsl(var(--card)) !important;
     color: #fff !important;
     border: 1.5px solid #616167 !important;
   }
-  .age-widget .label, .time-widget .label {
+  .age-widget .label,
+  .time-widget .label {
     color: #e8e8e9 !important;
   }
-  .muted, .muted-foreground {
+  .muted,
+  .muted-foreground {
     color: #bbbbbd !important;
   }
 }
@@ -161,7 +156,11 @@
   }
 
   /* Remove all glow/pulse/animated accent utilities */
-  .animate-float, .animate-pulse-glow, .animate-glow, .glass-morphism, .backdrop-blur-glass {
+  .animate-float,
+  .animate-pulse-glow,
+  .animate-glow,
+  .glass-morphism,
+  .backdrop-blur-glass {
     animation: none !important;
     box-shadow: none !important;
     background: none !important;
@@ -169,7 +168,8 @@
     border: none !important;
   }
 
-  .animate-rotate-slow, .animate-bounce-slow {
+  .animate-rotate-slow,
+  .animate-bounce-slow {
     animation: none !important;
   }
 
@@ -215,7 +215,8 @@
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -224,110 +225,172 @@
 }
 
 /* Remove all keyframes for glow/pulse */
-@keyframes pulseGlow {}
-@keyframes glow {}
+@keyframes pulseGlow {
+}
+@keyframes glow {
+}
 
 /* --- SuperGrokBackground Styles: No Grid --- */
 .sg-background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(ellipse at center, #2a2532 0%, #1a1820 50%, #0f0f0f 100%);
-    z-index: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    #2a2532 0%,
+    #1a1820 50%,
+    #0f0f0f 100%
+  );
+  z-index: 0;
 }
 
 .nebula {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(ellipse 800px 400px at 20% 10%, rgba(180, 100, 120, 0.12) 0%, transparent 50%),
-        radial-gradient(ellipse 600px 300px at 80% 90%, rgba(100, 130, 180, 0.10) 0%, transparent 50%),
-        radial-gradient(ellipse 900px 500px at 50% 50%, rgba(120, 120, 120, 0.06) 0%, transparent 70%);
-    animation: nebulaPulse 12s infinite ease-in-out;
-    z-index: 1;
-    opacity: 1 !important;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+      ellipse 800px 400px at 20% 10%,
+      rgba(180, 100, 120, 0.12) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 600px 300px at 80% 90%,
+      rgba(100, 130, 180, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 900px 500px at 50% 50%,
+      rgba(120, 120, 120, 0.06) 0%,
+      transparent 70%
+    );
+  animation: nebulaPulse 12s infinite ease-in-out;
+  z-index: 1;
+  opacity: 1 !important;
 }
 
 @keyframes nebulaPulse {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 0.8; }
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
 }
 
 .stars {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 3;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 3;
 }
 
 .star {
-    position: absolute;
-    background: #fff !important;
-    border-radius: 50%;
-    animation: twinkle 3s infinite alternate;
+  position: absolute;
+  background: #fff !important;
+  border-radius: 50%;
+  animation: twinkle 3s infinite alternate;
 }
-.star.small { width: 1px; height: 1px; opacity: 0.7; }
-.star.medium { width: 2px; height: 2px; opacity: 0.9; }
-.star.large { width: 3px; height: 3px; opacity: 1; }
+.star.small {
+  width: 1px;
+  height: 1px;
+  opacity: 0.7;
+}
+.star.medium {
+  width: 2px;
+  height: 2px;
+  opacity: 0.9;
+}
+.star.large {
+  width: 3px;
+  height: 3px;
+  opacity: 1;
+}
 
 @keyframes twinkle {
-    0% { opacity: 0.3; transform: scale(0.8); }
-    100% { opacity: 1; transform: scale(1.2); }
+  0% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
 }
 
 .particles {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 4;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 4;
 }
 
 .particle {
-    position: absolute;
-    background: rgba(255, 255, 255, 0.15) !important;
-    border-radius: 50%;
-    pointer-events: none;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .floating-orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(1px);
-    animation: float 8s infinite ease-in-out;
-    z-index: 5;
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(1px);
+  animation: float 8s infinite ease-in-out;
+  z-index: 5;
 }
 .orb1 {
-    width: 60px;
-    height: 60px;
-    background: radial-gradient(circle, rgba(180, 100, 120, 0.25) 0%, transparent 70%);
-    top: 20%;
-    left: 10%;
-    animation-delay: 0s;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(
+    circle,
+    rgba(180, 100, 120, 0.25) 0%,
+    transparent 70%
+  );
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
 }
 .orb2 {
-    width: 40px;
-    height: 40px;
-    background: radial-gradient(circle, rgba(100, 130, 180, 0.25) 0%, transparent 70%);
-    top: 60%;
-    right: 15%;
-    animation-delay: 2s;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(
+    circle,
+    rgba(100, 130, 180, 0.25) 0%,
+    transparent 70%
+  );
+  top: 60%;
+  right: 15%;
+  animation-delay: 2s;
 }
 .orb3 {
-    width: 80px;
-    height: 80px;
-    background: radial-gradient(circle, rgba(120, 120, 120, 0.2) 0%, transparent 70%);
-    bottom: 20%;
-    left: 50%;
-    animation-delay: 4s;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(
+    circle,
+    rgba(120, 120, 120, 0.2) 0%,
+    transparent 70%
+  );
+  bottom: 20%;
+  left: 50%;
+  animation-delay: 4s;
 }
 @keyframes float {
-    0%, 100% { transform: translateY(0px) translateX(0px); }
-    25% { transform: translateY(-20px) translateX(10px); }
-    50% { transform: translateY(-10px) translateX(-15px); }
-    75% { transform: translateY(-30px) translateX(5px); }
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  50% {
+    transform: translateY(-10px) translateX(-15px);
+  }
+  75% {
+    transform: translateY(-30px) translateX(5px);
+  }
 }
 
 .sg-background,
@@ -335,28 +398,40 @@
 .stars,
 .particles,
 .floating-orb {
-    z-index: 0 !important;
-    pointer-events: none;
+  z-index: 0 !important;
+  pointer-events: none;
 }
 
-.text-strong, h1, h2, h3, h4, h5, h6, .gradient-text {
-    color: hsl(var(--primary)) !important;
-    text-shadow: none !important;
+.text-strong,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.gradient-text {
+  color: hsl(var(--primary)) !important;
+  text-shadow: none !important;
 }
 
-.btn-accent, .age-widget, .time-widget, .accent-bg, .accent-border {
-    background: hsl(var(--accent)) !important;
-    color: hsl(var(--accent-foreground)) !important;
-    border-color: hsl(var(--accent)) !important;
-    box-shadow: none !important;
+.btn-accent,
+.age-widget,
+.time-widget,
+.accent-bg,
+.accent-border {
+  background: hsl(var(--accent)) !important;
+  color: hsl(var(--accent-foreground)) !important;
+  border-color: hsl(var(--accent)) !important;
+  box-shadow: none !important;
 }
 
-.btn-accent:hover, .accent-bg:hover {
-    background: #e6b800 !important;
-    color: hsl(var(--accent-foreground)) !important;
+.btn-accent:hover,
+.accent-bg:hover {
+  background: #e6b800 !important;
+  color: hsl(var(--accent-foreground)) !important;
 }
 
 .text-accent {
-    color: hsl(var(--accent)) !important;
+  color: hsl(var(--accent)) !important;
 }
 /* --- End SuperGrokBackground Styles: No Grid --- */

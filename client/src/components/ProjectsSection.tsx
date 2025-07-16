@@ -131,27 +131,27 @@ export default function ProjectsSection() {
                 <div className="absolute inset-0 bg-primary/20 dark:bg-primary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <div className="flex space-x-4">
                     <Button 
+                    size="sm" 
+                    variant="secondary" 
+                    className="bg-background/90 dark:bg-background/90 hover:bg-background dark:hover:bg-background transition-all duration-300 hover:scale-110"
+                    onClick={(e) => {
+                    e.stopPropagation();
+                    window.open(project.github, "_blank");
+                    }}
+                    >
+                    <Github className="h-4 w-4" style={{ color: '#e8e8e9' }} />
+                    </Button>
+                    {project.demo && (
+                      <Button 
                       size="sm" 
                       variant="secondary" 
                       className="bg-background/90 dark:bg-background/90 hover:bg-background dark:hover:bg-background transition-all duration-300 hover:scale-110"
                       onClick={(e) => {
-                        e.stopPropagation();
-                        window.open(project.github, "_blank");
+                      e.stopPropagation();
+                      window.open(project.demo!, "_blank");
                       }}
-                    >
-                      <Github className="h-4 w-4" />
-                    </Button>
-                    {project.demo && (
-                      <Button 
-                        size="sm" 
-                        variant="secondary" 
-                        className="bg-background/90 dark:bg-background/90 hover:bg-background dark:hover:bg-background transition-all duration-300 hover:scale-110"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          window.open(project.demo!, "_blank");
-                        }}
                       >
-                        <ExternalLink className="h-4 w-4" />
+                      <ExternalLink className="h-4 w-4" style={{ color: '#e8e8e9' }} />
                       </Button>
                     )}
                   </div>
@@ -175,21 +175,23 @@ export default function ProjectsSection() {
                   <Button 
                     variant="ghost" 
                     size="sm" 
-                    className="text-primary dark:text-primary hover:text-primary/80 dark:hover:text-primary/80 transition-all duration-300 hover:scale-105"
+                    className="hover:text-primary/80 dark:hover:text-primary/80 transition-all duration-300 hover:scale-105"
+                    style={{ color: '#e8e8e9' }}
                     onClick={() => window.open(project.github, "_blank")}
                   >
-                    <Github className="h-4 w-4 mr-2" />
+                    <Github className="h-4 w-4 mr-2" style={{ color: '#e8e8e9' }} />
                     GitHub
                   </Button>
                   {project.demo ? (
                     <Button 
                       variant="ghost" 
                       size="sm" 
-                      className="text-primary dark:text-primary hover:text-primary/80 dark:hover:text-primary/80 transition-all duration-300 hover:scale-105"
+                      className="hover:text-primary/80 dark:hover:text-primary/80 transition-all duration-300 hover:scale-105"
+                      style={{ color: '#e8e8e9' }}
                       onClick={() => window.open(project.demo, "_blank")}
                     >
                       Live Demo
-                      <ExternalLink className="h-4 w-4 ml-2" />
+                      <ExternalLink className="h-4 w-4 ml-2" style={{ color: '#e8e8e9' }} />
                     </Button>
                   ) : null}
                 </div>

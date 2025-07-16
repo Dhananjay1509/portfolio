@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import { TrendingUp, Users, Award, Code } from "lucide-react";
-import { useTheme } from "@/components/ThemeProvider";
 
 const stats = [
   {
@@ -37,7 +36,6 @@ const stats = [
 
 export default function StatsSection() {
   const [isVisible, setIsVisible] = useState(false);
-  const { theme } = useTheme();
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {

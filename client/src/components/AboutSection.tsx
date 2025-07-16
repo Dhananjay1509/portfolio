@@ -2,8 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
-import { useTheme } from "@/components/ThemeProvider";
-import profileImage from "@assets/profile_1749069315238.png";
+import profileImage from "@/assets/profile.jpg";
 
 const skillGroups = [
   {
@@ -47,7 +46,6 @@ const skillGroups = [
 ];
 
 export default function AboutSection() {
-  const { theme } = useTheme();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 

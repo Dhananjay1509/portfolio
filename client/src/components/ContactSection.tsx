@@ -8,7 +8,6 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
-import { useTheme } from "@/components/ThemeProvider";
 
 interface ContactFormData {
   name: string;

@@ -1,6 +1,5 @@
 import { GraduationCap, Briefcase, ChevronRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { useTheme } from "@/components/ThemeProvider";
 
 const education = [
   {
@@ -53,7 +52,6 @@ const experience = [
 ];
 
 export default function ExperienceSection() {
-  const { theme } = useTheme();
   return (
     <section id="experience" className="py-20 transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
